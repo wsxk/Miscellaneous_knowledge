@@ -1,0 +1,15 @@
+CREATE DATABASE 数据库名称 [库选项]; 	创建一个数据库名称
+USE 数据库名称;				使用数据库
+show dababases;				展示数据库
+
+show table status;				展示当前数据库的数据表
+DROP DATABASE 数据库名称;			删除数据库
+create user ‘Alice'@%'  identified by ‘1234’;  创建用户
+mysql -u 用户名 				；登录用户
+grant all on Galaxy.* to ‘Alice’@ '%’ with grant option; 给用户授权
+ revoke all on Galaxy.* from 'Bob'@'%'; 		撤销Bob的权限
+select Host,User from user;				查看用户
+select *from xxx ;					查看xxx表中的内容
+
+Update xxx set DepartureTime=Date_add(DepartureTime,INTERVAL 1 HOUR) where FlightNum='JD5712'and DepartureTime LIKE "2020-05-28%"	修改表中数据的内容
+delete from xxx where aa='bb'			删除数据

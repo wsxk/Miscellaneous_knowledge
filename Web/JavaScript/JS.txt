@@ -1,0 +1,1 @@
+1.可以在run函数中添加console.log('new 0pcode'+command.args) 来查看代码

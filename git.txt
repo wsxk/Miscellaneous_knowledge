@@ -1,0 +1,38 @@
+本地：
+1 git commit 		:创建一个新的提交记录(快照)
+2 git branch xxx		:创建一个名为xxx的分支
+3 git checkout xxx		:切换到名为xxx的分支（xxx也可以是提交记录，HEAD指向该记录）
+（git checkout xxx + git commit 把当前分支切换到新快照中)
+4 git checkout -b <your-branch-name> 创建新分支并切换到该分支
+5 git merge xxx		: xxx分支获得当前分支的内容
+6 git rebase xxx		:（合并操作）同上
+   git rebase -i HEAD~4	:提供一个交互对话框，用于提取HEAD的前4个提交记录开始处理之后的提交
+7 git cherry-pick <提交名>	:将提交抓到当前分支的下面（获取 提交名的提交）获得提交名分支 （与rebase merge相反）
+8 xxx^			:寻找xxx分支所在的提交记录的上一个提交
+   git checkout xxx^	:切换到xxx分支所在提交的上一个提交
+   git checkout xxx^(num)	:若xxx有多个父节点，num表示第num个父节点
+9 xxx~<num>		:切换到xxx分支所在提交的上num个提交
+（注：^~可以在一条命令中使用）
+10 git branch -f master HEAD~3 :将master分支指向HEAD的第三级父提交
+11 git log			:查看提交记录的哈希值
+12 git reset HEAD~1	:把当前分支移动回上一个提交记录，本地代码库就不知道有之前这个提交了
+13 git revert HEAD		:在当前要撤销的提交记录后添加一个新提交，这个新提交的更改是撤销提交记录，也就是说，新生成的提交记录的状态和当前提交记录的上一个提交状态相同（网络代码库）
+14 git tag v1 C1		:在C1提交记录上建立一个标签为v1
+15 git describe	xxx	：找到距离当前xxx分支最近的锚点 （返回最近的锚点的名称，距离，当前节点的hash值）
+
+远程：
+1. git clone 			:本地创建一个远程仓库的拷贝
+2. git fetch			:将本地仓库的远程分支更新成远程仓库的最新版本
+				  主要做了2步 从远程仓库下载本地仓库缺少的提交记录
+				  更新远程分支指针（单纯的下载操作）
+    git fetch origin foo		：找到远程仓库中的foo指针，把之前的内容拷过来
+    git fetch origin foo:bar		:
+3. git pull				: git fetch + git merge
+    git pull --rebase			: git fetch + git rebase
+4. git push			: 将当前的分支提交到远程仓库中，更新远程仓库的指针以及本地仓库的远程指针的指向
+    git push origin master		：切换到本地master分支，获取所有提交，再到远程仓库origin中的master分支，将所有没有的都添上去
+    git push origin foo^:master	: 切换到foo^分支，将foo之前的提交，如果origin中的master没有，全部添加。
+	             <source>:<destination>
+5. git reset xxx			: 将当前的分支重置到远程仓库的指针所在的位置
+6. git checkout -b totallyNotMaster o/master  :将totallyNotMaster设置为追踪o/master
+    git branch -u o/master foo		            同上

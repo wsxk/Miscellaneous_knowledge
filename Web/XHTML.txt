@@ -1,0 +1,26 @@
+1.XHTML简介：
+	XHTML指的是可拓展超文本标记语言
+	XHTML与HTML4.01几乎相同
+	XHTML是更严格更纯净的HTML版本
+	XHTML是以XML（数据传输的标记格式）应用的方式定义的HTML
+
+2. 为什么使用XHTML
+	为了代码的完整性和良好性
+
+3. 文档声明：
+	DTD：规定了使用通用标记语言的网页语法
+
+4. 三种XHTML文档类型:
+	STRICT（严格类型）
+	TRANSITIONAL（过渡类型）
+	FRAMESET（框架类型）
+
+5. XHTML的语法：
+	XHTML元素必须正确嵌套
+	XHTML元素必须始终关闭
+	XHTML元素必须小写
+	XHTML文档必须有一个根元素
+	
+	XHTML属性必须小写
+	XHTML属性值必须有引号包围
+	XHTML属性最小化是禁止的

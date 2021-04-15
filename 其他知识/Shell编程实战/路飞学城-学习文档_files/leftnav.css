@@ -1,0 +1,33 @@
+/** =======================
+ * Contenedor Principal
+ ===========================*/
+
+.summary .link {
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.summary li {
+  cursor: pointer;
+}
+
+/**
+ * Submenu
+ -----------------------------*/
+.submenu {
+  display: none;
+  font-size: 14px;
+}
+
+.submenu a {
+  display: block;
+  text-decoration: none;
+  color: #666;
+  padding: 12px;
+  padding-left: 42px;
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
