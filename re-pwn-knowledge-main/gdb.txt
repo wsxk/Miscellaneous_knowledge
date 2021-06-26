@@ -1,0 +1,25 @@
+b xxx	：设置函数断点
+b *0x..  	: 直接设置地址作为断点
+delete	：删除断点
+x/nuf addr(寄存器前要加$): 查看内存中的值，n是显示数量 u(b ,h , w , g)表示显示单元大小  f表示显示格式 
+i r eax:查看寄存器的值
+set $eax=0 :修改寄存器的值为0
+
+disas	：弹出当前函数的汇编代码
+n	：单步执行/跳过函数
+s	: 单步执行/进入函数
+r	 : 执行到断点
+c               : #Continue的简写，继续执行被调试程序，直至下一个断点或程序结束。(gdb) c
+start	:开始执行
+jump 	:直接跳转到该条指令执行（其他寄存器的值不变）
+dump [格式] memory 文件名 起始地址 终止地址       (把指定内存段写到文件)
+	 binary      原始二进制格式
+                 ihex        intel 16进制格式
+                 srec        S-recored格式
+                 tekhex      tektronix 16进制格式
+info functions: 显示函数信息
+
+调试带参数的可执行文件
+1. gdb xxx
+2. set args xxxx xxxx(xxxx为输入参数）
+3. r

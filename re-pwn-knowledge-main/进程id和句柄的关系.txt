@@ -1,0 +1,9 @@
+pid：进程的唯一标识
+句柄：一个不变的内存空间地址，其中存放着程序的地址
+
+函数:
+GetCurrentProcessId();                   // 进程id
+OpenProcess(0x1F0FFFu, 0, v0);     // 返回句柄
+GetProcAddress(hModule, "IsDebuggerPresent");// 返回IsDebuggerPresent的地址
+VirtualProtectEx(hProcess, IsDebuggerPresent_0, 0x10ui64, 0x40u, &flOldProtect);  // 改变在特定进程中内存区域的保护属性
+WriteProcessMemory(hProcess, IsDebuggerPresent_0, &Buffer, 0x10ui64, 0i64);// 写内存
