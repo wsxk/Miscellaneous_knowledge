@@ -1,4 +1,0 @@
-uncompyle6  XX.pyc > xx.py
-	  
-python 有个opcode库可以看字节码对应的操作码
-pycdc 可以反汇编
